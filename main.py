@@ -2,6 +2,7 @@ import pyttsx3 as p
 import speech_recognition as sr
 from selenium_main import InfoW
 from YouTube_auto import Music
+from news import news
 
 engine = p.init()
 rate = engine.getProperty('rate')
@@ -71,5 +72,11 @@ elif "play" and "video" in text:
 
             assist = Music()
             assist.play(vid)
+
+elif "news" in text:
+     arr=news()
+     for i in range(len(arr)):
+          speak(arr[i])
+          print(arr[i])
 
 
